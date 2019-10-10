@@ -56,6 +56,7 @@ MonoBehaviour:
   doesNotWantPhotoGlowIntensity: 1
   wantsPhotoGlowIntensity: 1
   wantsPhotoBulbController: {fileID: 1802465122151263242}
+  passengerBulbController: {fileID: 1802465123098400344}
 --- !u!1 &4320923452468699634
 GameObject:
   m_ObjectHideFlags: 0

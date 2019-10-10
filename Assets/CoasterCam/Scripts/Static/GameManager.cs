@@ -11,13 +11,13 @@ namespace CoasterCam
     public static class GameManager
     {
         /// <summary>
-        /// Shoot photo
+        /// Interact
         /// </summary>
-        public static void ShootPhoto()
+        public static void Interact()
         {
             if (GameManagerScript.Instance != null)
             {
-                GameManagerScript.Instance.ShootPhoto();
+                GameManagerScript.Instance.Interact();
             }
         }
     }

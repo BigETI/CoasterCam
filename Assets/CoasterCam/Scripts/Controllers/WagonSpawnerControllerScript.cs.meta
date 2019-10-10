@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 99222833609446a45a5c923188e58c57
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - wagonAsset: {fileID: 76066952032137237, guid: 14bbeeb7b037f0c47bc93837468fd8b7,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

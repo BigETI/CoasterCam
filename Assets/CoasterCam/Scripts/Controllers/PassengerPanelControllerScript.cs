@@ -49,7 +49,54 @@ namespace CoasterCam.Controllers
         [SerializeField]
         private BulbControllerScript wantsPhotoBulbController = default;
 
-        // Update is called once per frame
+        /// <summary>
+        /// Passenger bulb controller
+        /// </summary>
+        [SerializeField]
+        private BulbControllerScript passengerBulbController = default;
+
+        /// <summary>
+        /// Wants photo
+        /// </summary>
+        public bool WantsPhoto
+        {
+            get => wantsPhoto;
+            set => wantsPhoto = value;
+        }
+
+        /// <summary>
+        /// Passenger bulb color
+        /// </summary>
+        public Color PassengerBulbColor
+        {
+            get => ((passengerBulbController == null) ? Color.black : passengerBulbController.BulbColor);
+            set
+            {
+                if (passengerBulbController != null)
+                {
+                    passengerBulbController.BulbColor = value;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Passenger bulb glow intensity
+        /// </summary>
+        public float PassengerBulbGlowIntensity
+        {
+            get => ((passengerBulbController == null) ? 0.0f : passengerBulbController.GlowIntensity);
+            set
+            {
+                if (passengerBulbController != null)
+                {
+                    passengerBulbController.GlowIntensity = value;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Update
+        /// </summary>
         private void Update()
         {
             if (wantsPhotoBulbController != null)

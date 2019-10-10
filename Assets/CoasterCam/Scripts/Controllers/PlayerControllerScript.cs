@@ -14,20 +14,31 @@ namespace CoasterCam.Controllers
         /// <summary>
         /// Main input actions
         /// </summary>
-        [SerializeField]
-        private MainInputActions mainInputActions = default;
+        //[SerializeField]
+        //private MainInputActions mainInputActions = default;
 
         /// <summary>
         /// Start
         /// </summary>
         private void Start()
         {
-            if (mainInputActions != null)
+            //if (mainInputActions != null)
+            //{
+            //    mainInputActions.ActionMap.Interact.performed += (context) =>
+            //    {
+            //        GameManager.Interact();
+            //    };
+            //}
+        }
+
+        /// <summary>
+        /// Update
+        /// </summary>
+        private void Update()
+        {
+            if (Input.anyKeyDown)
             {
-                mainInputActions.ActionMap.Interact.performed += (context) =>
-                {
-                    GameManager.ShootPhoto();
-                };
+                GameManager.Interact();
             }
         }
     }

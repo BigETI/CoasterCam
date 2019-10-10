@@ -46,7 +46,7 @@ namespace CoasterCam.Controllers
         private string wagonCountFormat = "{0}";
 
         /// <summary>
-        /// Lives
+        /// Lifes
         /// </summary>
         [SerializeField]
         private uint lifes = default;
@@ -200,7 +200,7 @@ namespace CoasterCam.Controllers
             set
             {
                 selectedScreenIndex = value;
-                if ((selectedScreenIndex < 0) || (selectedScreenIndex >= ScreenRenderTextures.Length))
+                if ((selectedScreenIndex < 0) || (selectedScreenIndex >= ScreenRenderTextures.Count))
                 {
                     selectedScreenIndex = -1;
                 }
@@ -256,6 +256,29 @@ namespace CoasterCam.Controllers
         }
 
         /// <summary>
+        /// Lifes
+        /// </summary>
+        public uint Lifes
+        {
+            get => lifes;
+            set => lifes = value;
+        }
+
+        /// <summary>
+        /// Photo quality
+        /// </summary>
+        public uint PhotoQuality
+        {
+            get => photoQuality;
+            set => photoQuality = value;
+        }
+
+        /// <summary>
+        /// Max photo quality
+        /// </summary>
+        public uint MaxPhotoQuality => ((photoQualityProgress == null) ? 1U : (uint)(photoQualityProgress.BulbCount));
+
+        /// <summary>
         /// Passengers
         /// </summary>
         public IReadOnlyList<PassengerPanelControllerScript> PassengerPanelControllers
@@ -273,7 +296,7 @@ namespace CoasterCam.Controllers
         /// <summary>
         /// Screen render textures
         /// </summary>
-        private RenderTexture[] ScreenRenderTextures
+        public IReadOnlyList<RenderTexture> ScreenRenderTextures
         {
             get
             {
@@ -288,7 +311,7 @@ namespace CoasterCam.Controllers
         /// <summary>
         /// Selected screen render texture
         /// </summary>
-        public RenderTexture SelectedScreenRenderTexture => (((selectedScreenIndex >= 0) && (selectedScreenIndex < ScreenRenderTextures.Length)) ? ScreenRenderTextures[selectedScreenIndex] : null);
+        public RenderTexture SelectedScreenRenderTexture => (((selectedScreenIndex >= 0) && (selectedScreenIndex < ScreenRenderTextures.Count)) ? ScreenRenderTextures[selectedScreenIndex] : null);
 
         /// <summary>
         /// Update text
